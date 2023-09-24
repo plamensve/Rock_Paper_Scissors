@@ -12,28 +12,33 @@ game = ''
 while True:
     if command == 'End':
         break
-    else:
-        player_one = input()
-        player_two = input()
-        game += player_one
-        game += player_two
 
-    if player_one != rock_choice and player_one != paper_choice and player_one != scissors_choice:
+    player_one = input("Player One, Make your choice:")
+    while player_one != rock_choice and player_one != paper_choice and player_one != scissors_choice:
         print(
             "Your choice is invalide, please make your choice again!\nYou need to choose one of this options: 'r', 'p', 's' ")
-        break
+        player_one = input("Player One, Make your choice:")
+        continue
+    game += player_one
 
-    if player_two != rock_choice and player_two != paper_choice and player_two != scissors_choice:
+    player_two = input("Player Two, Make your choice:")
+    while player_two != rock_choice and player_two != paper_choice and player_two != scissors_choice:
         print(
             "Your choice is invalide, please make your choice again!\nYou need to choose one of this options: 'r', 'p', 's' ")
-        break
+        player_two = input("Player Two, Make your choice:")
+        continue
+    game += player_two
+
+    # --------------------------------------------------------------------------------------------------------------------------------#
 
     if game == 'rs' or game == 'pr' or game == 'sp':
         print(f'The winner is Player one!')
+        break
 
     if game == 'sr' or game == 'rp' or game == 'ps':
         print(f'The winner is Player two!')
+        break
 
     if game == 'rr' or game == 'pp' or game == 'ss':
         print(f'Drow Game!')
-
+        break
